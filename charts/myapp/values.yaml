@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: docker.io/nginx
-  tag: "latest" # {"$imagepolicy": "flux-system:nginx-image-policy"}
+  tag: "3596dd2be40daa158f3ecce60185dd9db2dd8d60"
   pullPolicy: IfNotPresent
 
 service:
