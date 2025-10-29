@@ -4,4 +4,4 @@ resources:
   - ../../base
 images:
   - name: docker.io/nginx
-    newTag: "7dfbd47754de9743b1198def8b5c2702bd4a230a"
+    newTag: "latest" # {"$imagepolicy": "flux-system:nginx-image-policy"}

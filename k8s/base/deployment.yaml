@@ -17,10 +17,17 @@ spec:
     spec:
       containers:
         - name: devops-sample-app
-          image: docker.io/eknathdj/nginx:latest
+          image: docker.io/nginx:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
           readinessProbe:
             httpGet:
               path: /
