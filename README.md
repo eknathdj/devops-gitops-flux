@@ -1,22 +1,21 @@
-# DevOps GitOps Sample - FluxCD + GitHub Actions (Java) — Flux-only
+# Rocket Lab - DevOps GitOps Sample with FluxCD + GitHub Actions (Nginx) — Flux-only
 
 Flux-only GitOps scaffold using **Flux v2** for deployment and **GitHub Actions** for CI.
-Includes Java (Spring Boot) app, Dockerfile, Kustomize (base + dev overlay), optional Helm chart, Flux manifests,
-and DevSecOps scans (PMD + Grype).
+Includes nginx web server, Dockerfile, Kustomize (base + dev overlay), optional Helm chart, Flux manifests,
+and DevSecOps scans (Grype).
 
 ## Key Features
-- Java Spring Boot sample (`pom.xml`, `src/...`)
-- Dockerfile (Java 17)
-- Kustomize manifests: `k8s/base`, `k8s/overlays/dev`
+- Nginx web server with custom HTML page
+- Dockerfile (nginx:alpine)
+- Kustomize manifests: `k8s/base`, `k8s/overlays/dev` (using `rocket-lab` namespace)
 - Optional Helm chart: `charts/myapp`
 - Flux manifests: `manifests/flux/*`
-- CI: `.github/workflows/ci-cd.yml` (Maven build + PMD, Docker build/push, Grype scan, update kustomize & helm values)
+- CI: `.github/workflows/ci-cd.yml` (Docker build/push, Grype scan, update kustomize & helm values)
 - Optional **Flux Image Automation** to bump tags (instead of CI committing tag changes)
 
 ## Setup (CI secrets)
-- `REGISTRY` (e.g., ghcr.io)
-- `REGISTRY_USERNAME`
-- `REGISTRY_PASSWORD`
+- `DOCKERHUB_USERNAME`
+- `DOCKERHUB_TOKEN`
 
 ## Bootstrap Flux
 ```bash

@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - ../../base
 images:
-  - name: ghcr.io/eknathdj/devops-sample-app
-    newTag: "latest" # {"$imagepolicy": "flux-system:devops-image-policy:name"}
+  - name: docker.io/nginx
+    newTag: "latest"

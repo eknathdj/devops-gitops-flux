@@ -1,8 +1,8 @@
 replicaCount: 2
 
 image:
-  repository: ghcr.io/eknathdj/devops-sample-app
-  tag: "latest" # {"$imagepolicy": "flux-system:devops-image-policy:name"}
+  repository: docker.io/nginx
+  tag: "latest"
   pullPolicy: IfNotPresent
 
 service:
@@ -11,8 +11,8 @@ service:
 
 readinessProbe:
   path: /
-  port: 8080
+  port: 80
 
 livenessProbe:
   path: /
-  port: 8080
+  port: 80
