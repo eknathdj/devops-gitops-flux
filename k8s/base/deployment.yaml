@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: devops-sample-app
-          image: docker.io/nginx:latest
+          image: docker.io/eknathdj/nginx:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
