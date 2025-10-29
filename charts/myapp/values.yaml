@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: docker.io/nginx
-  tag: "bb2c4faa97d15d7e720ed76e19a776bdc78b87f7"
+  tag: "ff95c03c0e71c4421ac531f27d1586f626c3d76f"
   pullPolicy: IfNotPresent
 
 service:

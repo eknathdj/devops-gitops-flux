@@ -4,4 +4,4 @@ resources:
   - ../../base
 images:
   - name: docker.io/nginx
-    newTag: "bb2c4faa97d15d7e720ed76e19a776bdc78b87f7"
+    newTag: "ff95c03c0e71c4421ac531f27d1586f626c3d76f"
