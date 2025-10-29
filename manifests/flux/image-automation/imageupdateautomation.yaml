@@ -1,0 +1,24 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: devops-image-update
+  namespace: flux-system
+spec:
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: devops-repo
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        name: fluxcd-bot
+        email: fluxcd-bot@noreply.local
+      messageTemplate: "chore: flux image update"
+    push:
+      branch: main
+  update:
+    strategy: Setters
+    path: ./
