@@ -1,13 +1,22 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: devops-k8s
+  name: rocket-lab-k8s
   namespace: flux-system
 spec:
-  interval: 1m
+  interval: 5m
   path: "./k8s/overlays/dev"
   prune: true
   sourceRef:
     kind: GitRepository
     name: devops-repo
   validation: client
+  healthChecks:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: devops-sample-app
+      namespace: rocket-lab
+    - apiVersion: v1
+      kind: Service
+      name: devops-sample-svc
+      namespace: rocket-lab

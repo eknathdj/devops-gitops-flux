@@ -1,25 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "devops-sample-app.fullname" . }}
+  name: {{ include "rocket-lab-app.fullname" . }}
   labels:
-    app: {{ include "devops-sample-app.name" . }}
+    app: {{ include "rocket-lab-app.name" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "devops-sample-app.name" . }}
+      app: {{ include "rocket-lab-app.name" . }}
   template:
     metadata:
       labels:
-        app: {{ include "devops-sample-app.name" . }}
+        app: {{ include "rocket-lab-app.name" . }}
     spec:
       containers:
-        - name: {{ include "devops-sample-app.name" . }}
+        - name: {{ include "rocket-lab-app.name" . }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - containerPort: 8080
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
           readinessProbe:
             httpGet:
               path: {{ .Values.readinessProbe.path }}

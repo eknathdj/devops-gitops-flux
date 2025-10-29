@@ -1,2 +1,2 @@
-{{- define "devops-sample-app.name" -}}devops-sample-app{{- end -}}
-{{- define "devops-sample-app.fullname" -}}{{ include "devops-sample-app.name" . }}{{- end -}}
+{{- define "rocket-lab-app.name" -}}rocket-lab-app{{- end -}}
+{{- define "rocket-lab-app.fullname" -}}{{ include "rocket-lab-app.name" . }}{{- end -}}

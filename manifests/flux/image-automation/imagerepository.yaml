@@ -1,8 +1,8 @@
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
-  name: devops-image-repo
+  name: nginx-image-repo
   namespace: flux-system
 spec:
-  image: docker.io/eknathdj/rocket-lab-app
-  interval: 1m
+  image: docker.io/nginx
+  interval: 5m
